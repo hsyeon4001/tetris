@@ -1,6 +1,6 @@
 import Board from './board.js';
 import Piece from './piece.js';
-import { COLS, ROWS, BLOCK_SIZE, KEY, POINTS, LEVEL } from './constants.js';
+import { COLS, ROWS, BLOCK_SIZE, KEY, POINTS, LEVEL, CLEAR_LEVEL } from './constants.js';
 
 const canvas = document.getElementById('board');
 const ctx = canvas.getContext('2d');
@@ -100,6 +100,7 @@ function handleKey(e) {
       cancelAnimationFrame(requestId);
       board.freeze();
       board.clearLines(account, time);
+      if (account.level >= CLEAR_LEVEL) return;
 
       drawPiece();
     } else {
@@ -111,6 +112,8 @@ function handleKey(e) {
         cancelAnimationFrame(requestId);
         board.freeze();
         board.clearLines(account, time);
+        if (account.level >= CLEAR_LEVEL) return;
+
         drawPiece();
       }
     }
@@ -135,9 +138,8 @@ let account = new Proxy(accountValues, {
 
     updateAccount(key, value);
 
-    if (accountValues.level >= 6) {
+    if (accountValues.level >= 1) {
       clear();
-      return false;
     }
     return true;
   },

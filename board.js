@@ -1,4 +1,4 @@
-import { KEY, COLS, ROWS, BLOCK_SIZE, COLORS, POINTS, LINES_PER_LEVEL, LEVEL } from './constants.js';
+import { KEY, COLS, ROWS, BLOCK_SIZE, COLORS, POINTS, LINES_PER_LEVEL, LEVEL, CLEAR_LEVEL } from './constants.js';
 import Piece from './piece.js';
 
 class Board {
@@ -130,6 +130,7 @@ class Board {
 
       if (account.lines >= LINES_PER_LEVEL) {
         account.level++;
+        if (account.level >= CLEAR_LEVEL) return;
         account.lines -= LINES_PER_LEVEL;
         time.level = LEVEL[account.level];
       }

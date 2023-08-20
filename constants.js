@@ -8,7 +8,8 @@ const KEY = {
   DOWN: 40,
   SPACE: 32,
 };
-const LINES_PER_LEVEL = 5;
+const LINES_PER_LEVEL = 1;
+const CLEAR_LEVEL = 6;
 const COLORS = ['cyan', 'blue', 'orange', 'yellow', 'green', 'purple', 'red'];
 const SHAPES = [
   [
@@ -71,4 +72,4 @@ Object.freeze(KEY);
 Object.freeze(POINTS);
 Object.freeze(LEVEL);
 
-export { COLS, ROWS, BLOCK_SIZE, KEY, COLORS, SHAPES, POINTS, LINES_PER_LEVEL, LEVEL };
+export { COLS, ROWS, BLOCK_SIZE, KEY, COLORS, SHAPES, POINTS, LINES_PER_LEVEL, LEVEL, CLEAR_LEVEL };
