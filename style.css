@@ -1,0 +1,55 @@
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 320px 200px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-column div {
+  position: relative;
+}
+
+.right-column div div {
+  width: 8px;
+  height: 8px;
+  font-size: 5px;
+  /* background-color: black; */
+  position: absolute;
+  top: 24px;
+  left: 105px;
+  cursor: pointer;
+  transition: all ease 1s;
+}
+
+.right-column div div:hover {
+  transform: rotate(360deg);
+}
+
+.right-column div div.isVisible {
+  display: none;
+}
+
+.game-board {
+  border: solid 2px;
+}
+
+.play-button {
+  background-color: #4caf50;
+  font-size: 16px;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+.dog {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+}
